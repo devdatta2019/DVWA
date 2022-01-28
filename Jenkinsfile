@@ -49,7 +49,7 @@ pipeline {
          configFileProvider([configFile(fileId: '58ecf2b0-f51f-4e7e-a89c-68b23919f95b', variable: 'Settings_Maven')]) {
                         retry(count: 3) {
                             rtMavenRun(
-                                tool: "Maven 3.8.4", //id specified in Global Tool Configuration
+                                tool: "Maven", //id specified in Global Tool Configuration
                                 pom: 'pom.xml',
                                 goals: '-U -s $Settings_Maven clean compile',
                             )
